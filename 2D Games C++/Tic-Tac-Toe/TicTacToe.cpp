@@ -134,7 +134,7 @@ int main(){
   manager->hasGameEnded = false;
   cout<<"Player One gets the first turn";
   //do this until the grid is full
-  while ( manager->gridHasSpace() || !(manager->hasGameEnded) ) {
+  while ( manager->gridHasSpace() && !(manager->hasGameEnded) ) {
     // {
     //inform whose turn it is
     if( manager->turn == playerOne ){
