@@ -135,7 +135,6 @@ int main(){
   cout<<"Player One gets the first turn";
   //do this until the grid is full
   while ( manager->gridHasSpace() && !(manager->hasGameEnded) ) {
-    // {
     //inform whose turn it is
     if( manager->turn == playerOne ){
       printf("Its the first players turn \n");
@@ -150,7 +149,7 @@ int main(){
     cin>>column;
     //if location not available tell the user to pick another spot untill it is a valid spot
     if ( !manager->isValidLocation(row,column) ){
-      while(manager->isValidLocation(row,column)){
+      while(!manager->isValidLocation(row,column)){
         printf("Please enter row number followed by the column number you want to select \n");
         cin>>row;
         cin>>column;
@@ -163,21 +162,18 @@ int main(){
       manager->grid[row][column] = 2;
     }
     //check if player has won
-    if(manager->hasWon(row, column)){
-      if (manager->turn == playerOne){
-        printf("player one has won the game");
-      }else{
-        printf("player two has won the game");
-      }
-    }
+    manager->hasWon(row, column);
     manager->printGrid();
     //change the turn to the other player
     manager->changeTurn();
-    //do the saame stuff
+   
     
-    //}
   }
-  
+  if (manager->turn == playerOne){
+    printf("player one has won the game \n");
+  }else{
+    printf("player two has won the game \n");
+  }
   cout<<"The game was a draw"<<endl;
   cout<<"Thanks for playing"<<endl;
   return 0;
