@@ -1,0 +1,18 @@
+
+/*
+Given head which is a reference node to a singly-linked list. The value of each node in the linked list is either 0 or 1. The linked list holds the binary representation of a number.
+
+Return the decimal value of the number in the linked list.
+1-0-1
+101 = 5
+*/
+//max length of the list ? = 30
+//can it be empty ? = no 
+// can it be more than one binary in any one of the nodes. = no
+
+Input : [1,0,1]
+Output: 5
+
+int 
+
+
